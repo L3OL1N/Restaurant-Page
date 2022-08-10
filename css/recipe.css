@@ -1,10 +1,10 @@
 /* css */
-.content {
+.content.recipes {
   max-width: 100%;
   height: auto;
   border: 1px solid black;
 }
-.content .banner {
+.content.recipes .banner {
   max-width: 100%;
   height: 400px;
   background: repeating-linear-gradient(45deg, rgb(187, 255, 0), rgb(187, 255, 0) 10px, green 10px, green 20px);
@@ -13,25 +13,25 @@
   background-position-y: 40%;
 }
 @media (max-width: 421px) {
-  .content .banner {
+  .content.recipes .banner {
     height: 200px;
     background-position-y: 60%;
     background-size: 100%;
   }
 }
-.content main {
+.content.recipes main {
   padding: 10px;
 }
-.content main .photo {
+.content.recipes main #photo {
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   grid-auto-rows: 240px;
 }
-.content main .photo a {
+.content.recipes main #photo a {
   transition: ease-in-out 1s;
 }
-.content main .photo .card {
+.content.recipes main #photo .card {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,41 +51,41 @@
   transform: scale(var(--s, 1));
   transition: ease 0.5s;
 }
-.content main .photo .card:hover {
+.content.recipes main #photo .card:hover {
   --s:1.04;
 }
-.content main .photo .card.tall {
+.content.recipes main #photo .card.tall {
   grid-row: span 2/auto;
 }
-.content main .photo .card.wide {
+.content.recipes main #photo .card.wide {
   grid-column: span 2/auto;
 }
-.content main .photo .card h2 {
+.content.recipes main #photo .card h2 {
   padding: 6%;
   text-align: center;
   background: rgba(0, 0, 0, 0.5);
 }
 @media (max-width: 790px) {
-  .content main .photo .card.dessert {
+  .content.recipes main #photo .card.dessert {
     grid-column: span 2/auto;
   }
 }
 @media (max-width: 421px) {
-  .content main .photo .card.tall {
+  .content.recipes main #photo .card.tall {
     grid-row: span 1/auto;
   }
-  .content main .photo .card.wide {
+  .content.recipes main #photo .card.wide {
     grid-column: span 1/auto;
   }
-  .content main .photo .card.dessert {
+  .content.recipes main #photo .card.dessert {
     grid-column: span 1/auto;
   }
 }
-.content main nav {
+.content.recipes main nav {
   height: 50px;
   position: relative;
 }
-.content main nav::before {
+.content.recipes main nav::before {
   content: " ";
   position: absolute;
   border-top: 1px solid #000;
@@ -93,35 +93,35 @@
   left: 10%;
   width: 80%;
 }
-.content main .shop {
+.content.recipes main .shop {
   display: none;
   gap: 10px;
 }
-.content main .shop.active {
+.content.recipes main .shop.active {
   display: flex;
 }
-.content main .shop .sidebar {
+.content.recipes main .shop .sidebar {
   background: #d7ee9d;
   margin-left: -10px;
   flex: 13%;
 }
-.content main .shop .sidebar a {
+.content.recipes main .shop .sidebar a {
   display: block;
   background: #aec378;
   padding: 20px;
   font-weight: bold;
 }
-.content main .shop .sidebar a.select {
+.content.recipes main .shop .sidebar a.select {
   filter: hue-rotate(30deg);
 }
-.content main .shop .sidebar a:hover {
+.content.recipes main .shop .sidebar a:hover {
   filter: hue-rotate(30deg);
 }
-.content main .shop .sidebar a li {
+.content.recipes main .shop .sidebar a li {
   width: 100%;
   word-wrap: nowrap;
 }
-.content main .shop .right_item {
+.content.recipes main .shop .right_item {
   width: 100%;
   display: grid;
   gap: 15px;
@@ -129,7 +129,7 @@
   padding: 20px 0;
   margin-left: 20px;
 }
-.content main .shop .right_item li {
+.content.recipes main .shop .right_item li {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -138,66 +138,66 @@
   height: 300px;
   box-shadow: 1px 1px 5px 1px lightgray;
 }
-.content main .shop .right_item li * {
+.content.recipes main .shop .right_item li * {
   margin-bottom: 10px;
 }
-.content main .shop .right_item li img {
+.content.recipes main .shop .right_item li img {
   display: block;
   width: 150px;
   height: 150px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.content main .shop .right_item li h3 {
+.content.recipes main .shop .right_item li h3 {
   font-size: 22px;
   font-weight: bold;
 }
-.content main .shop .right_item li h4 {
+.content.recipes main .shop .right_item li h4 {
   margin-top: -10px;
 }
-.content main .shop .right_item li p {
+.content.recipes main .shop .right_item li p {
   font-size: 22px;
   font-weight: bold;
 }
-.content main .shop .right_item li button {
+.content.recipes main .shop .right_item li button {
   font-size: 18px;
   background: #d7ee9d;
   width: 80%;
   padding: 5px;
   position: relative;
 }
-.content main .shop .right_item li button::after {
+.content.recipes main .shop .right_item li button::after {
   content: "Cart";
 }
-.content main .shop .right_item li button:hover {
+.content.recipes main .shop .right_item li button:hover {
   filter: hue-rotate(30deg);
 }
-.content main .shop .right_item li button.active {
+.content.recipes main .shop .right_item li button.active {
   filter: hue-rotate(50deg);
   content: "In cart";
 }
-.content main .shop .right_item li button.active::after {
+.content.recipes main .shop .right_item li button.active::after {
   content: "In Cart";
 }
-.content main .shop .right_item li button.active i {
+.content.recipes main .shop .right_item li button.active i {
   display: none;
 }
-.content main .shop .right_item li button i {
+.content.recipes main .shop .right_item li button i {
   position: absolute;
   top: 6px;
   left: 54px;
 }
-.content main .shop .right_item li span {
+.content.recipes main .shop .right_item li span {
   font-style: italic;
   font-size: 22px;
   color: #12916f;
 }
 @media (max-width: 640px) {
-  .content main .shop .right_item li {
+  .content.recipes main .shop .right_item li {
     width: 80%;
     margin: 0 auto;
   }
 }
-.content main .shop .main_food, .content main .shop .BBQ, .content main .shop .veg, .content main .shop .dessert, .content main .shop .chef_select {
+.content.recipes main .shop .main_food, .content.recipes main .shop .BBQ, .content.recipes main .shop .veg, .content.recipes main .shop .dessert, .content.recipes main .shop .chef_select {
   display: none;
 }/*# sourceMappingURL=recipe.css.map */

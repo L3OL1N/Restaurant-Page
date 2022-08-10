@@ -1,4 +1,5 @@
 import { RECIPES } from "./recipes";
+import { CONTACT } from "./contact";
 
 function elementFromHTML(html){
     const template = document.createElement("template");
@@ -6,7 +7,7 @@ function elementFromHTML(html){
     return template.content.firstElementChild;
 };
 const HOME = elementFromHTML(`
-<div class="content">
+<div class="content home">
 <div class="banner">
 </div>
 <main>
@@ -46,8 +47,6 @@ const content = document.getElementsByClassName("content");
 for(let i = 0; i < pages.length; i++){
     let page = pages[i];
     page.addEventListener("click",()=>{
-        console.log(page.dataset.page)
-        console.log(content)
         if(page.dataset.page == "HOME"){
             if(content.length > 0) content[0].remove();
             document.getElementById("content").appendChild(HOME);
@@ -55,7 +54,40 @@ for(let i = 0; i < pages.length; i++){
         if(page.dataset.page == "RECIPES"){
             if(content.length > 0) content[0].remove();
             document.getElementById("content").appendChild(RECIPES);
+            shopShow();
         } 
-        
+        if(page.dataset.page == "CONTACT"){
+            if(content.length > 0) content[0].remove();
+            document.getElementById("content").appendChild(CONTACT);
+        } 
     })
 }
+function shopShow(){
+    const recipesPhoto = document.getElementById("photo");
+    recipesPhoto.addEventListener("click",photohandle);
+    
+    
+    function photohandle(e){
+        if(e.target.matches("a")){
+            e.preventDefault();
+            let herfpos = e.target.id;
+            window.scrollTo({top: 1400, behavior: 'smooth'});
+            let shop = document.querySelector(`.right_item.${herfpos}`);
+            let right_item = document.querySelectorAll(`.right_item`);
+            for(let el of right_item){
+                el.style.display = "none";
+            }
+            shop.style.display = "grid";
+            let sidebar = document.querySelectorAll(`.sidebar>a[data-shop]`);
+            for(let el of sidebar){
+                el.classList.remove("select");
+            }
+            document.querySelector(`.sidebar>a[data-shop=${herfpos}]`).classList.add("select");
+            document.querySelector(`.shop`).classList.add("active");
+        } 
+    }
+}
+
+
+
+//     $("a[href="+hrefpos+"]").siblings("a").removeClass("select");

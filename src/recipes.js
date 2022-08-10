@@ -4,28 +4,28 @@ function elementFromHTML(html){
     return template.content.firstElementChild;
 };
 export const RECIPES = elementFromHTML(`
-<div class="content">
+<div class="content recipes">
             <div class="banner">              
             </div>
             <main>
-                <div class="photo">
-                    <a href="main_food" class="card wide" 
+                <div id="photo">
+                    <a id="main_food" class="card wide" 
                          style="background-image:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') ;">
                         <h2>精緻主食</h2>
                     </a>
-                    <a href="BBQ" class="card tall" 
+                    <a id="BBQ" class="card tall" 
                          style="background-image:url('https://images.unsplash.com/photo-1555939594-58d7cb561ad1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') ;">
                         <h2>經典炭烤</h2>
                     </a>
-                    <a href="veg" class="card tall" 
+                    <a id="veg" class="card tall" 
                          style="background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8M3x8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') ;">
                         <h2>新鮮生菜</h2>
                     </a>
-                    <a href="dessert" class="card dessert" 
+                    <a id="dessert" class="card dessert" 
                          style="background-image:url('https://images.unsplash.com/photo-1565958011703-44f9829ba187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Zm9vZHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60') ;">
                         <h2>輕食甜點</h2>
                     </a>
-                    <a href="chef_select" class="card wide" 
+                    <a id="chef_select" class="card wide" 
                          style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGZvb2R8ZW58MHwwfDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60') ;">
                         <h2>主廚精選</h2>
                     </a>
@@ -33,11 +33,11 @@ export const RECIPES = elementFromHTML(`
                 <nav id="nav"></nav>
                 <div class="shop">
                     <ul class="sidebar">
-                        <a href="main_food"><li>精緻主食</li></a>
-                        <a href="BBQ"><li>經典炭烤</li></a>
-                        <a href="veg"><li>新鮮生菜</li></a>
-                        <a href="dessert"><li>輕食甜點</li></a>
-                        <a href="chef_select"><li>主廚精選</li></a>
+                        <a data-shop="main_food"><li>精緻主食</li></a>
+                        <a data-shop="BBQ"><li>經典炭烤</li></a>
+                        <a data-shop="veg"><li>新鮮生菜</li></a>
+                        <a data-shop="dessert"><li>輕食甜點</li></a>
+                        <a data-shop="chef_select"><li>主廚精選</li></a>
                     </ul>
                     <ul class="right_item main_food">
                         <li>

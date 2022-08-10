@@ -1,10 +1,10 @@
 /* css */
-.content {
+.content.contact {
   max-width: 100%;
   height: auto;
   border: 1px solid black;
 }
-.content .banner {
+.content.contact .banner {
   grid-area: banner;
   max-width: 100%;
   height: 400px;
@@ -14,13 +14,13 @@
   background-position-y: 71%;
 }
 @media (max-width: 421px) {
-  .content .banner {
+  .content.contact .banner {
     height: 200px;
     background-position-y: 60%;
     background-size: 100%;
   }
 }
-.content main {
+.content.contact main {
   display: grid;
   grid-template-areas: "form form" "info map";
   grid-template-columns: 1fr 1fr;
@@ -30,19 +30,19 @@
   padding: 20px;
 }
 @media (max-width: 768px) {
-  .content main {
+  .content.contact main {
     display: flex;
     flex-direction: column;
   }
 }
-.content .form {
+.content.contact .form {
   max-width: 100%;
   grid-area: form;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.content .form h3 {
+.content.contact .form h3 {
   font-size: 26px;
   color: #ffffff;
   line-height: 1.5;
@@ -50,16 +50,16 @@
   margin-bottom: 20px;
   text-align: center;
 }
-.content .form form {
+.content.contact .form form {
   display: flex;
 }
 @media (max-width: 421px) {
-  .content .form form {
+  .content.contact .form form {
     flex-direction: column;
     gap: 10px;
   }
 }
-.content .form textarea {
+.content.contact .form textarea {
   height: 250px;
   width: 45%;
   border-radius: 5px;
@@ -67,42 +67,42 @@
   text-indent: 0.5em;
 }
 @media (max-width: 421px) {
-  .content .form textarea {
+  .content.contact .form textarea {
     width: 100%;
     height: 200px;
   }
 }
-.content .form .form_text {
+.content.contact .form .form_text {
   width: 45%;
   margin-left: 50px;
 }
 @media (max-width: 421px) {
-  .content .form .form_text {
+  .content.contact .form .form_text {
     width: 100%;
     margin: 10px;
   }
 }
-.content .form label {
+.content.contact .form label {
   cursor: pointer;
 }
-.content .form label, .content .form input {
+.content.contact .form label, .content.contact .form input {
   display: block;
   width: 95%;
   color: #ffffff;
   margin-bottom: 10px;
   margin-right: 150px;
 }
-.content .form input {
+.content.contact .form input {
   color: #7d7d7d;
   height: 34px;
   border-radius: 5px;
   border: 0;
   padding-left: 5px;
 }
-.content .form input:focus {
+.content.contact .form input:focus {
   color: black;
 }
-.content .form .button {
+.content.contact .form .button {
   height: 33px;
   width: 71px;
   color: #ffffff;
@@ -113,12 +113,12 @@
   margin-left: auto;
   cursor: pointer;
 }
-.content .form .button:hover {
+.content.contact .form .button:hover {
   box-shadow: 1px 1px 1px 1px gray;
   font-weight: bold;
   background: #19e4b1;
 }
-.content .info {
+.content.contact .info {
   grid-area: info;
   justify-self: center;
   align-self: center;
@@ -126,13 +126,13 @@
   font-size: 20px;
   font-weight: bold;
 }
-.content .info p {
+.content.contact .info p {
   margin-bottom: 20px;
 }
-.content .info p a {
+.content.contact .info p a {
   text-decoration: none;
 }
-.content iframe {
+.content.contact iframe {
   grid-area: map;
   width: 100%;
   height: 300px;

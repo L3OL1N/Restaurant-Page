@@ -421,4 +421,350 @@ footer ul a li {
 }
 .content.home main .swiper .slide_3 {
   background: url("https://images.unsplash.com/photo-1585238342024-78d387f4a707?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80");
-}/*# sourceMappingURL=index.css.map */
+}
+
+/* css */
+.content.recipes {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+.content.recipes .banner {
+  max-width: 100%;
+  height: 400px;
+  background: repeating-linear-gradient(45deg, rgb(187, 255, 0), rgb(187, 255, 0) 10px, green 10px, green 20px);
+  background: url("https://images.unsplash.com/photo-1606568939863-43d6704c8713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80");
+  background-position: bottom;
+  background-position-y: 40%;
+}
+@media (max-width: 421px) {
+  .content.recipes .banner {
+    height: 200px;
+    background-position-y: 60%;
+    background-size: 100%;
+  }
+}
+.content.recipes main {
+  padding: 10px;
+}
+.content.recipes main #photo {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-auto-rows: 240px;
+}
+.content.recipes main #photo a {
+  transition: ease-in-out 1s;
+}
+.content.recipes main #photo .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 3rem;
+  color: #fff;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem, rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  height: 100%;
+  width: 100%;
+  border-radius: 4px;
+  transition: all 500ms;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(var(--s, 1));
+  transition: ease 0.5s;
+}
+.content.recipes main #photo .card:hover {
+  --s:1.04;
+}
+.content.recipes main #photo .card.tall {
+  grid-row: span 2/auto;
+}
+.content.recipes main #photo .card.wide {
+  grid-column: span 2/auto;
+}
+.content.recipes main #photo .card h2 {
+  padding: 6%;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+@media (max-width: 790px) {
+  .content.recipes main #photo .card.dessert {
+    grid-column: span 2/auto;
+  }
+}
+@media (max-width: 421px) {
+  .content.recipes main #photo .card.tall {
+    grid-row: span 1/auto;
+  }
+  .content.recipes main #photo .card.wide {
+    grid-column: span 1/auto;
+  }
+  .content.recipes main #photo .card.dessert {
+    grid-column: span 1/auto;
+  }
+}
+.content.recipes main nav {
+  height: 50px;
+  position: relative;
+}
+.content.recipes main nav::before {
+  content: " ";
+  position: absolute;
+  border-top: 1px solid #000;
+  top: 50%;
+  left: 10%;
+  width: 80%;
+}
+.content.recipes main .shop {
+  display: none;
+  gap: 10px;
+}
+.content.recipes main .shop.active {
+  display: flex;
+}
+.content.recipes main .shop .sidebar {
+  background: #d7ee9d;
+  margin-left: -10px;
+  flex: 13%;
+}
+.content.recipes main .shop .sidebar a {
+  display: block;
+  background: #aec378;
+  padding: 20px;
+  font-weight: bold;
+}
+.content.recipes main .shop .sidebar a.select {
+  filter: hue-rotate(30deg);
+}
+.content.recipes main .shop .sidebar a:hover {
+  filter: hue-rotate(30deg);
+}
+.content.recipes main .shop .sidebar a li {
+  width: 100%;
+  word-wrap: nowrap;
+}
+.content.recipes main .shop .right_item {
+  width: 100%;
+  display: grid;
+  gap: 15px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  padding: 20px 0;
+  margin-left: 20px;
+}
+.content.recipes main .shop .right_item li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 300px;
+  box-shadow: 1px 1px 5px 1px lightgray;
+}
+.content.recipes main .shop .right_item li * {
+  margin-bottom: 10px;
+}
+.content.recipes main .shop .right_item li img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.content.recipes main .shop .right_item li h3 {
+  font-size: 22px;
+  font-weight: bold;
+}
+.content.recipes main .shop .right_item li h4 {
+  margin-top: -10px;
+}
+.content.recipes main .shop .right_item li p {
+  font-size: 22px;
+  font-weight: bold;
+}
+.content.recipes main .shop .right_item li button {
+  font-size: 18px;
+  background: #d7ee9d;
+  width: 80%;
+  padding: 5px;
+  position: relative;
+}
+.content.recipes main .shop .right_item li button::after {
+  content: "Cart";
+}
+.content.recipes main .shop .right_item li button:hover {
+  filter: hue-rotate(30deg);
+}
+.content.recipes main .shop .right_item li button.active {
+  filter: hue-rotate(50deg);
+  content: "In cart";
+}
+.content.recipes main .shop .right_item li button.active::after {
+  content: "In Cart";
+}
+.content.recipes main .shop .right_item li button.active i {
+  display: none;
+}
+.content.recipes main .shop .right_item li button i {
+  position: absolute;
+  top: 6px;
+  left: 54px;
+}
+.content.recipes main .shop .right_item li span {
+  font-style: italic;
+  font-size: 22px;
+  color: #12916f;
+}
+@media (max-width: 640px) {
+  .content.recipes main .shop .right_item li {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+.content.recipes main .shop .main_food, .content.recipes main .shop .BBQ, .content.recipes main .shop .veg, .content.recipes main .shop .dessert, .content.recipes main .shop .chef_select {
+  display: none;
+}
+
+/* css */
+.content.contact {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid black;
+}
+.content.contact .banner {
+  grid-area: banner;
+  max-width: 100%;
+  height: 400px;
+  background: repeating-linear-gradient(45deg, pink, pink 10px, red 10px, red 20px);
+  background: url("https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80");
+  background-position: bottom;
+  background-position-y: 71%;
+}
+@media (max-width: 421px) {
+  .content.contact .banner {
+    height: 200px;
+    background-position-y: 60%;
+    background-size: 100%;
+  }
+}
+.content.contact main {
+  display: grid;
+  grid-template-areas: "form form" "info map";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 20px;
+  background: linear-gradient(#00694a, #02bd88);
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .content.contact main {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.content.contact .form {
+  max-width: 100%;
+  grid-area: form;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content.contact .form h3 {
+  font-size: 26px;
+  color: #ffffff;
+  line-height: 1.5;
+  margin: 10px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.content.contact .form form {
+  display: flex;
+}
+@media (max-width: 421px) {
+  .content.contact .form form {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.content.contact .form textarea {
+  height: 250px;
+  width: 45%;
+  border-radius: 5px;
+  resize: none;
+  text-indent: 0.5em;
+}
+@media (max-width: 421px) {
+  .content.contact .form textarea {
+    width: 100%;
+    height: 200px;
+  }
+}
+.content.contact .form .form_text {
+  width: 45%;
+  margin-left: 50px;
+}
+@media (max-width: 421px) {
+  .content.contact .form .form_text {
+    width: 100%;
+    margin: 10px;
+  }
+}
+.content.contact .form label {
+  cursor: pointer;
+}
+.content.contact .form label, .content.contact .form input {
+  display: block;
+  width: 95%;
+  color: #ffffff;
+  margin-bottom: 10px;
+  margin-right: 150px;
+}
+.content.contact .form input {
+  color: #7d7d7d;
+  height: 34px;
+  border-radius: 5px;
+  border: 0;
+  padding-left: 5px;
+}
+.content.contact .form input:focus {
+  color: black;
+}
+.content.contact .form .button {
+  height: 33px;
+  width: 71px;
+  color: #ffffff;
+  background: #00cc98;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 15px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.content.contact .form .button:hover {
+  box-shadow: 1px 1px 1px 1px gray;
+  font-weight: bold;
+  background: #19e4b1;
+}
+.content.contact .info {
+  grid-area: info;
+  justify-self: center;
+  align-self: center;
+  padding: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.content.contact .info p {
+  margin-bottom: 20px;
+}
+.content.contact .info p a {
+  text-decoration: none;
+}
+.content.contact iframe {
+  grid-area: map;
+  width: 100%;
+  height: 300px;
+  border: 1px solid black;
+  border-radius: 5px;
+}/*# sourceMappingURL=main.css.map */
