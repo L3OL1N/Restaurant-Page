@@ -90,4 +90,16 @@ function shopShow(){
 
 
 
-//     $("a[href="+hrefpos+"]").siblings("a").removeClass("select");
+//   //sidebar select & right_item show 
+//   $(".sidebar>a").click(function (event) { 
+//     event.preventDefault();
+
+//     //select
+//     $(this).addClass("select");
+//     $(this).siblings().removeClass("select");
+
+//     //show
+//     var hrefDish = $(this).attr("href");
+//     $("."+hrefDish).css("display","grid");
+//     $("."+hrefDish).siblings(".right_item").hide();
+//   });
