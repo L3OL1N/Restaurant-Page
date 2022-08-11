@@ -6,6 +6,19 @@ function elementFromHTML(html){
     template.innerHTML = html.trim();
     return template.content.firstElementChild;
 };
+const HEADER = elementFromHTML(`
+<header>
+<a href="">
+    Logo
+</a>
+<ul class="menu">
+    <a class="active" data-page="HOME"><li >HOME</li></a>
+    <a data-page="RECIPES"><li>RECIPES</li></a>
+    <a data-page="CONTACT"><li>CONTACT</li></a>
+</ul>
+<a class="hamburger" href="#">三</a>
+</header>
+`)
 const HOME = elementFromHTML(`
 <div class="content home">
 <div class="banner">
@@ -42,36 +55,64 @@ const HOME = elementFromHTML(`
 </main>
 </div>
 `)
+const FOOTER = elementFromHTML(`
+<footer>
+<a href="#">
+    <img src="https://cdn-icons-png.flaticon.com/512/193/193699.png" alt="logo">
+</a>
+<a href="#" class="toTop-arrow"></a>
+<ul>
+    <a data-page="HOME"><li >首頁</li></a>
+    <a data-page="RECIPES"><li>菜單</li></a>
+    <a data-page="CONTACT"><li>聯絡我們</li></a>
+</ul>
+</footer>
+`)
+// header footer
+document.getElementById("content").prepend(HEADER);
+document.getElementById("content").appendChild(HOME);
+document.getElementById("content").append(FOOTER);
+// #content
 const pages = document.querySelectorAll("[data-page]");
 const content = document.getElementsByClassName("content");
+const footer = document.querySelector("footer");
 for(let i = 0; i < pages.length; i++){
     let page = pages[i];
     page.addEventListener("click",()=>{
-        if(page.dataset.page == "HOME"){
-            if(content.length > 0) content[0].remove();
+        const dataPage = page.dataset.page;
+        if(page.parentElement.parentElement.matches("footer")) window.scrollTo({top: 0, behavior: "instant" });
+        if(content.length > 0) content[0].remove();
+        footer.remove();
+        for(let el of pages){
+            el.classList.remove("active");
+        }
+        if(dataPage == "HOME"){
+            document.querySelector(`header [data-page=${dataPage}]`).classList.add("active");     
             document.getElementById("content").appendChild(HOME);
         } 
-        if(page.dataset.page == "RECIPES"){
-            if(content.length > 0) content[0].remove();
+        if(dataPage == "RECIPES"){
+            document.querySelector(`header [data-page=${dataPage}]`).classList.add("active");
             document.getElementById("content").appendChild(RECIPES);
             shopShow();
         } 
-        if(page.dataset.page == "CONTACT"){
-            if(content.length > 0) content[0].remove();
+        if(dataPage == "CONTACT"){
+            document.querySelector(`header [data-page=${dataPage}]`).classList.add("active");
             document.getElementById("content").appendChild(CONTACT);
-        } 
+        }
+        document.getElementById("content").append(FOOTER); 
     })
 }
 function shopShow(){
     const recipesPhoto = document.getElementById("photo");
     recipesPhoto.addEventListener("click",photohandle);
-    
+    document.querySelector(".sidebar").addEventListener("click",sidehandle);
     
     function photohandle(e){
-        if(e.target.matches("a")){
+        if(e.target.matches("a, h2")){
             e.preventDefault();
             let herfpos = e.target.id;
-            window.scrollTo({top: 1400, behavior: 'smooth'});
+            if(e.target.matches("h2")) herfpos = e.target.parentElement.id
+            window.scrollTo({top: 1260, behavior: 'smooth'});
             let shop = document.querySelector(`.right_item.${herfpos}`);
             let right_item = document.querySelectorAll(`.right_item`);
             for(let el of right_item){
@@ -86,20 +127,27 @@ function shopShow(){
             document.querySelector(`.shop`).classList.add("active");
         } 
     }
+    function sidehandle(e){
+        if(e.target.matches("a,li")){
+            e.preventDefault();
+            let sidebar = document.querySelectorAll(`.sidebar>a[data-shop]`);
+            for(let el of sidebar){
+                el.classList.remove("select");
+            }
+            let herfpos = e.target.dataset.shop;
+            e.target.classList.add("select");
+            if(e.target.matches("li")){
+                herfpos = e.target.parentElement.dataset.shop;
+                e.target.parentElement.classList.add("select");
+            } 
+            let shop = document.querySelector(`.right_item.${herfpos}`);
+            let right_item = document.querySelectorAll(`.right_item`);
+            for(let el of right_item){
+                el.style.display = "none";
+            }
+            shop.style.display = "grid";
+        }
+
+    }
 }
 
-
-
-//   //sidebar select & right_item show 
-//   $(".sidebar>a").click(function (event) { 
-//     event.preventDefault();
-
-//     //select
-//     $(this).addClass("select");
-//     $(this).siblings().removeClass("select");
-
-//     //show
-//     var hrefDish = $(this).attr("href");
-//     $("."+hrefDish).css("display","grid");
-//     $("."+hrefDish).siblings(".right_item").hide();
-//   });

@@ -181,6 +181,10 @@ footer a {
   display: block;
   width: 40%;
 }
+footer a img {
+  width: 40px;
+  height: 40px;
+}
 @media (max-width: 421px) {
   footer .toTop-arrow {
     margin-right: 40%;
