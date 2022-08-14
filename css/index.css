@@ -313,10 +313,8 @@ footer ul a li {
 .content.home main .secret img {
   width: 150px;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -webkit-clip-path: circle(50% at 50% 50%);
-          clip-path: circle(50% at 50% 50%);
+  object-fit: cover;
+  clip-path: circle(50% at 50% 50%);
   margin: 10px;
 }
 @media (max-width: 421px) {

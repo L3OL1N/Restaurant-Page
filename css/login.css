@@ -46,12 +46,6 @@
   border-left: 1px solid #df0000;
   border-right: 1px solid #df0000;
 }
-.content form .input_box input:not(:-moz-placeholder-shown):invalid {
-  border: 1px solid #df0000;
-}
-.content form .input_box input:not(:-ms-input-placeholder):invalid {
-  border: 1px solid #df0000;
-}
 .content form .input_box input:not(:placeholder-shown):invalid {
   border: 1px solid #df0000;
 }

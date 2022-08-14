@@ -145,8 +145,7 @@
   display: block;
   width: 150px;
   height: 150px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 .content.recipes main .shop .right_item li h3 {
   font-size: 22px;
